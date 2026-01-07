@@ -86,15 +86,11 @@ This creates an optimized production build in the `build` folder.
 2. Select a priority level (Low, Medium, High)
 3. Click "Add Task" or press Enter
 
-![Adding Tasks Screenshot](./screenshots/adding-tasks.png)
-
 ### Managing Tasks
 - **Complete a task**: Click the checkbox next to the task
 - **Edit a task**: Click the ✏️ edit button, modify the text/priority, then press Enter or click ✓
 - **Delete a task**: Click the 🗑️ delete button
 - **Cancel editing**: Press Escape or click ✕
-
-![Managing Tasks Screenshot](./screenshots/managing-tasks.png)
 
 ### Filtering & Searching
 - **Filter by status**: Use the All/Active/Completed buttons
@@ -105,12 +101,8 @@ This creates an optimized production build in the `build` folder.
   - Priority (High → Low)
   - Alphabetical (A-Z)
 
-![Filtering & Searching Screenshot](./screenshots/filtering-searching.png)
-
 ### Theme Switching
 Click the 🌙/☀️ button in the top-right corner to toggle between dark and light themes.
-
-![Theme Switching Screenshot](./screenshots/theme-switching.png)
 
 ### Statistics
 View your productivity at a glance:
@@ -118,8 +110,6 @@ View your productivity at a glance:
 - **Active**: Tasks not yet completed
 - **Completed**: Finished tasks
 - **Progress**: Completion percentage with visual progress bar
-
-![Statistics Screenshot](./screenshots/statistics-detail.png)
 
 ## 🛠️ Technologies Used
 
