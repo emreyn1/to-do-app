@@ -1,13 +1,8 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import TodoItem from './TodoItem';
 
-function TodoList({ tasks, toggleTask, deleteTask, filter, setFilter, isDarkTheme }) {
-  const filteredTasks = tasks.filter(task => {
-    if (filter === 'active') return !task.completed;
-    if (filter === 'completed') return task.completed;
-    return true;
-  });
-
+function TodoList({ tasks, toggleTask, deleteTask, editTask, filter, setFilter, isDarkTheme }) {
   return (
     <>
       <div className="filter-buttons">
@@ -32,15 +27,28 @@ function TodoList({ tasks, toggleTask, deleteTask, filter, setFilter, isDarkThem
       </div>
 
       <ul className="task-list">
-        {filteredTasks.map(task => (
-          <TodoItem
-            key={task.id}
-            task={task}
-            toggleTask={toggleTask}
-            deleteTask={deleteTask}
-            isDarkTheme={isDarkTheme}
-          />
-        ))}
+        <AnimatePresence mode="popLayout">
+          {tasks.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className={`empty-state ${isDarkTheme ? 'dark' : ''}`}
+            >
+              <p>📝 No tasks yet. Add one above!</p>
+            </motion.div>
+          ) : (
+            tasks.map(task => (
+              <TodoItem
+                key={task.id}
+                task={task}
+                toggleTask={toggleTask}
+                deleteTask={deleteTask}
+                editTask={editTask}
+                isDarkTheme={isDarkTheme}
+              />
+            ))
+          )}
+        </AnimatePresence>
       </ul>
     </>
   );
